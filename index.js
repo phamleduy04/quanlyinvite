@@ -34,7 +34,13 @@ client.on('ready', () => {
             .then(invites => guildInvites.set(guild.id, invites))
             .catch(err => console.log(err));
     })
-    client.user.setPresence()
+    client.user.setPresence({
+        activity: {
+            name: '&invite',
+            type: 'PLAYING'
+        },
+        status: 'online'
+    })
 })
 
 client.on('guildMemberAdd', async member => {
