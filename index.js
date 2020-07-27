@@ -52,7 +52,7 @@ client.on('guildMemberAdd', async member => {
         const channel = member.guild.channels.cache.get('737093918776360960');
         if (channel) {
             const embed = new MessageEmbed()
-                .setDescription(`${member} (${member.user.tag}) đã vào server!\nMời bởi \`${usedInvite.inviter.tag}\``)
+                .setDescription(`${member} (${member.user.tag}) đã vào server!\nMời bởi \`${usedInvite.inviter ? "Không xác định được" : usedInvite.inviter.tag}\``)
                 .setFooter(`ID người vào: ${member.id}`)
                 .setTimestamp()
             channel.send(embed)
