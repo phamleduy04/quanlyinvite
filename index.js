@@ -94,7 +94,7 @@ client.on('message', async message => {
 
 client.on('messageDelete', (message) => {
     if (message.author.bot) return;
-    if (message.mentions.members) {
+    if (message.mentions.members.size > 0) {
         const embed = new MessageEmbed()
             .setAuthor('Phát hiện Ghost Ping')
             .addField('Người gởi: ', message.author.tag)
