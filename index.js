@@ -91,3 +91,13 @@ client.on('message', async message => {
         }
     }
 })
+
+client.on('messageDelete', (message) => {
+    if (message.mentions.members) {
+        const embed = new MessageEmbed()
+            .setAuthor('Phát hiện Ghost Ping')
+            .addField(`Người gởi: ${message.author.tag}`)
+            .addField(`Nội dung: ${message.content}`)
+        message.channel.send(embed);
+    }
+});
