@@ -99,6 +99,7 @@ client.on('messageDelete', (message) => {
             .setAuthor('Phát hiện Ghost Ping')
             .addField('Người gởi: ', message.author.tag)
             .addField('Nội dung: ', message.content)
+            .setImage('https://i.imgur.com/t1v2TFK.png');
         message.channel.send(embed);
     }
 });
